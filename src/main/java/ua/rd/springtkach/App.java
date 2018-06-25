@@ -1,5 +1,7 @@
 package ua.rd.springtkach;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ua.rd.springtkach.bean.Client;
 import ua.rd.springtkach.logger.ConsoleEventLogger;
 import ua.rd.springtkach.logger.EventLogger;
@@ -12,8 +14,11 @@ public class App {
     private EventLogger eventLogger;
 
     public static void main(String[] args) {
-        App app = new App();
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
+
+        App app = (App) ctx.getBean("app");
         app.logEvent("some event for user 1");
+        app.logEvent("some event for user 2");
     }
 
     public App() {
