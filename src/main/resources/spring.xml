@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+        <bean id="client" class="ua.rd.springtkach.bean.Client"/>
+
+        <bean id="eventLogger" class="ua.rd.springtkach.logger.ConsoleEventLogger"/>
+
+        <bean id="app" class="ua.rd.springtkach.App"/>
+
+        <!--app.client = new Client("1", "John Smith");-->
+        <!--app.eventLogger = new ConsoleEventLogger();-->
+</beans>
