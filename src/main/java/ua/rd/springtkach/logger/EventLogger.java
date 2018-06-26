@@ -1,5 +1,7 @@
 package ua.rd.springtkach.logger;
 
+import ua.rd.springtkach.bean.Event;
+
 public interface EventLogger {
-    void logEvent(String msg);
+    void logEvent(Event event);
 }

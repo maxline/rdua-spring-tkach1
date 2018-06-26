@@ -14,4 +14,11 @@
         <constructor-arg ref="client"/>
         <constructor-arg ref="eventLogger"/>
     </bean>
+
+    <bean id="event" class="ua.rd.springtkach.bean.Event" scope="prototype">
+        <constructor-arg>
+            <bean class="java.util.Date"/>
+        </constructor-arg>
+        <constructor-arg value="default"/>
+    </bean>
 </beans>
