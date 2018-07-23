@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       >
+
+    <bean id="eee" class="ua.rd.springtkach.aabb.Eee">
+
+        <property name="clientId" value="#{admin.getId()}"/>
+    </bean>
+
+    <bean id="admin" class="ua.rd.springtkach.bean.Client">
+        <property name="id" value="677"/>
+    </bean>
+
+
+    <bean name="someComponent" class="ua.rd.springtkach.question11.SomeComponent"
+          init-method="init" destroy-method="close"
+          lazy-init="true" scope="prototype" >
+    </bean>
+
+    <bean name="someService" class="ua.rd.springtkach.question11.SomeService"
+          init-method="init" destroy-method="close" >
+        <constructor-arg ref="someComponent"/>
+
+        <!--<property name="component" ref="someComponent"/>-->
+    </bean>
+
+    <bean id="customerService" class="ua.rd.springtkach.question11.CustomerService">
+        <property name="message" value="i'm property message" />
+    </bean>
+
+
+</beans>
+

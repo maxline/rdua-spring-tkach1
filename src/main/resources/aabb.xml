@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-lazy-init="true">
+
+
+    <bean id="a" class="ua.rd.springtkach.aabb.Aaa">
+        <constructor-arg ref="b"/>
+    </bean>
+
+    <bean id="b" class="ua.rd.springtkach.aabb.Bbb" scope="prototype">
+        <constructor-arg ref="c"/>
+    </bean>
+
+    <bean id="c" class="ua.rd.springtkach.aabb.Ccc"/>
+
+    <bean id="d" class="ua.rd.springtkach.aabb.Ddd" lazy-init="false">
+        <constructor-arg ref="b"/>
+    </bean>
+
+</beans>
